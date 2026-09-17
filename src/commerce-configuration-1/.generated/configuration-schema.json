@@ -1,0 +1,9 @@
+[
+  {
+    "default": "https://aisenseapi.com/services/v1/webhook_capture",
+    "description": "Base URL for the external welcome/capture service.",
+    "label": "Welcome service base URL",
+    "name": "welcome_service_base_url",
+    "type": "url"
+  }
+]

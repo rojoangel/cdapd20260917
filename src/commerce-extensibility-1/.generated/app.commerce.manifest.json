@@ -1,0 +1,50 @@
+{
+  "businessConfig": {
+    "schema": [
+      {
+        "default": "https://aisenseapi.com/services/v1/webhook_capture",
+        "description": "Base URL for the external welcome/capture service.",
+        "label": "Welcome service base URL",
+        "name": "welcome_service_base_url",
+        "type": "url"
+      }
+    ]
+  },
+  "eventing": {
+    "commerce": [
+      {
+        "events": [
+          {
+            "description": "Triggered after a customer account is committed in Commerce.",
+            "fields": [
+              {
+                "name": "email"
+              },
+              {
+                "name": "created_at"
+              },
+              {
+                "name": "updated_at"
+              }
+            ],
+            "label": "Customer Account Saved",
+            "name": "observer.customer_save_commit_after",
+            "runtimeActions": [
+              "my-app/handle-customer-created"
+            ]
+          }
+        ],
+        "provider": {
+          "description": "Handles native Commerce events for this app.",
+          "label": "Commerce Events Provider"
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "description": "Notifies an external welcome service, at a merchant-configurable base URL, when a genuinely new customer account is created.",
+    "displayName": "Customer Welcome Notifier",
+    "id": "customer-welcome-notifier",
+    "version": "1.1.0"
+  }
+}
